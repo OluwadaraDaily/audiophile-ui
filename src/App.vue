@@ -1,11 +1,13 @@
 <template>
   <header>
-    <h1>Header</h1>
+    <p>Header</p>
   </header>
-
   <main>
-    Welcome!
+    <h1>Something here!</h1>
   </main>
+  <footer>
+    <p>Footer</p>
+  </footer>
 </template>
 
 <script setup>
