@@ -33,4 +33,13 @@
   .sub-title {
     @apply text-[13px] leading-[25px] font-bold tracking-[1px];
   }
+  .primary-btn {
+    @apply px-3 py-4 bg-primary uppercase text-white hover:bg-primary-light;
+  }
+  .secondary-btn {
+    @apply px-3 py-4 bg-transparent border border-black text-black hover:bg-black hover:text-white;
+  }
+  .tertiary-btn {
+    @apply border-0 bg-transparent text-grey hover:text-primary flex items-center gap-2;
+  }
 }
