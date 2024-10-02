@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4">
+  <div class="my-4">
     <header-vue></header-vue>
   </div>
   <router-view></router-view>
