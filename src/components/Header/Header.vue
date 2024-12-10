@@ -29,6 +29,7 @@
         <cart-icon/>
       </div>
     </div>
+    <!-- Menu for small and medium sized screens -->
     <div class="relative block">
       <div 
         class="lg:hidden absolute w-full bg-white rounded-bl-xl rounded-br-xl roll-down z-10 top-0"
@@ -43,35 +44,35 @@
             </div>
             <div class="flex flex-col items-center">
               <p class="mb-2 font-bold text-black">HEADPHONES</p>
-              <button class="tertiary-btn sub-title text-black opacity-50">
+              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/headphones">
                 SHOP <right-arrow-icon/>
-              </button>
+              </router-link>
             </div>
           </div>
           <div 
             class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col items-center justify-end py-4"
           >
             <div class="absolute top-[-30px]">
-              <img src="../../assets/img/headphones.png" class="w-[80px] h-[104px]" alt="Headphones">
+              <img src="../../assets/img/speakers.png" class="w-[80px] h-[104px]" alt="Speakers">
             </div>
             <div class="flex flex-col items-center">
-              <p class="mb-2 font-bold text-black">HEADPHONES</p>
-              <button class="tertiary-btn sub-title text-black opacity-50">
+              <p class="mb-2 font-bold text-black">SPEAKERS</p>
+              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/speakers">
                 SHOP <right-arrow-icon/>
-              </button>
+              </router-link>
             </div>
           </div>
           <div 
             class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col items-center justify-end py-4"
           >
             <div class="absolute top-[-30px]">
-              <img src="../../assets/img/headphones.png" class="w-[80px] h-[104px]" alt="Headphones">
+              <img src="../../assets/img/earphones.png" class="w-[104px] h-[104px]" alt="Earphones">
             </div>
             <div class="flex flex-col items-center">
-              <p class="mb-2 font-bold text-black">HEADPHONES</p>
-              <button class="tertiary-btn sub-title text-black opacity-50">
+              <p class="mb-2 font-bold text-black">EARPHONES</p>
+              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/earphones">
                 SHOP <right-arrow-icon/>
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -88,13 +89,21 @@ import Logo from "../icons/Logo.vue";
 import CartIcon from "../icons/Cart.vue";
 import HamburgerIcon from "../icons/Hamburger.vue";
 import RightArrowIcon from "../icons/RightArrow.vue";
+import { useRouter } from "vue-router";
+
+// Router instance
+const router = useRouter();
 
 const showMenu = ref(false);
 
 const toggleMenu = () => {
-  console.log('SHOW MENU =>', showMenu)
   showMenu.value = !showMenu.value;
 };
+
+// Watch route changes to close the menu
+router.afterEach(() => {
+  showMenu.value = false;
+});
 </script>
 
 
