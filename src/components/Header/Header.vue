@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <div 
-      class="sticky top-0 lg:w-[85%] md:w-[90%] w-[90%] mx-auto lg:max-w-[1110px] backdrop-blur-[16px] py-8 flex items-center justify-between border-b border-[#979797]"
+      class="sticky top-0 lg:w-[85%] w-[90%] mx-auto lg:max-w-[1110px] backdrop-blur-[16px] py-8 flex items-center justify-between border-b border-[#979797]"
     >
       <div class="lg:hidden inline" @click="toggleMenu">
         <hamburger-icon/>
