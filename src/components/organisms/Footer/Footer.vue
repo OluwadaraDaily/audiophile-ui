@@ -27,7 +27,7 @@
           </p>
           <div class="flex items-center gap-4">
             <a href="https://www.facebook.com/oloyeleo" class="group" target="_blank">
-              <facebook/>
+              <facebook class="group-hover:stroke-primary"/>
             </a>
             <a href="https://www.instagram.com/oluwadara_daily" class="group" target="_blank">
               <instagram/>
