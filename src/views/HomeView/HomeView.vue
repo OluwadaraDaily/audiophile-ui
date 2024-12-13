@@ -32,14 +32,18 @@
       <div class="lg:mb-16 mb-8">
         <product-samples/>
       </div>
+      <div class="lg:mb-16 mb-8">
+        <highlight-banner/>
+      </div>
     </div>
   </section>
 </template>
 
 
 <script setup>
-  import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
-  import ProductSamples from "@/components/molecules/ProductSamples/ProductSamples.vue";
+import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
+import ProductSamples from "@/components/molecules/ProductSamples/ProductSamples.vue";
+import HighlightBanner from "@/components/molecules/HighlightBanner/HighlightBanner.vue";
 </script>
 
 <style scoped>
