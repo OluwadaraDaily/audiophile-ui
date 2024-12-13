@@ -23,10 +23,14 @@
       </div>
     </div>
   </section>
+  <!-- Other section (white background color) -->
   <section class="bg-white">
     <div class="lg:w-[75%] w-[90%] mx-auto">
       <div class="lg:my-16">
         <categories-menu/>
+      </div>
+      <div class="lg:mb-16 mb-8">
+        <product-samples/>
       </div>
     </div>
   </section>
@@ -35,21 +39,8 @@
 
 <script setup>
   import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
+  import ProductSamples from "@/components/molecules/ProductSamples/ProductSamples.vue";
 </script>
 
 <style scoped>
-.mask-image {
-  mask-image: 
-    linear-gradient(to bottom, black, transparent), 
-    linear-gradient(to left, black, transparent), 
-    linear-gradient(to top, black, transparent);
-  mask-composite: intersect;
-  -webkit-mask-image: 
-    linear-gradient(to bottom, black, transparent), 
-    linear-gradient(to left, black, transparent), 
-    linear-gradient(to top, black, transparent);
-  -webkit-mask-composite: intersect;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-}
 </style>

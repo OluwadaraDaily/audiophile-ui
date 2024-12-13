@@ -7,7 +7,9 @@
         <hamburger-icon/>
       </div>
       <div class="lg:basis-auto basis-[80%] flex justify-center md:justify-start">
-        <logo/>
+        <router-link to="/">
+          <logo/>
+        </router-link>
       </div>
       <div class="hidden lg:block">
         <ul class="flex items-center gap-4">
@@ -48,10 +50,10 @@
 // Imports
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Logo from "../icons/Logo.vue";
-import CartIcon from "../icons/Cart.vue";
-import HamburgerIcon from "../icons/Hamburger.vue";
-import CategoriesMenu from "../molecules/CategoriesMenu/CategoriesMenu.vue"
+import Logo from "@/components/icons/Logo.vue";
+import CartIcon from "@/components/icons/Cart.vue";
+import HamburgerIcon from "@/components/icons/Hamburger.vue";
+import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
 
 // Router instance
 const router = useRouter();
