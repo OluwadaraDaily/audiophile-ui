@@ -1,7 +1,7 @@
 <template>
-  <div class="lg:w-[85%] w-[90%] mx-auto">
-    <!-- Main section -->
-    <div class="lg:my-6 lg:flex lg:items-center lg:justify-between md:relative h-[60vh] lg:h-auto">
+  <!-- Main section -->
+  <section class="bg-[#0E0E0E] text-white mb-8 lg:mb-12">
+    <div class="lg:w-[85%] w-[90%] mx-auto lg:flex lg:items-center sm:flex sm:justify-center lg:justify-between md:relative h-[60vh] lg:h-auto">
       <div 
         class="absolute lg:static top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:transform-none z-[3] lg:text-left text-center"
       >
@@ -17,16 +17,24 @@
       <div class="lg:h-[586px] lg:w-[586px] lg:static absolute">
         <img 
           src="../../assets/img/new-product.png" 
-          class="lg:h-[586px] lg:w-[586px]" 
+          class="lg:h-[586px] lg:w-[586px] md:w-[780px]" 
           alt="XX99 Mark II Headphones"
         />
       </div>
     </div>
-  </div>
+  </section>
+  <section class="bg-white">
+    <div class="lg:w-[75%] w-[90%] mx-auto">
+      <div class="lg:my-16">
+        <categories-menu/>
+      </div>
+    </div>
+  </section>
 </template>
 
 
 <script setup>
+  import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
 </script>
 
 <style scoped>
