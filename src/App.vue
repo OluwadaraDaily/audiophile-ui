@@ -1,7 +1,5 @@
 <template>
-  <div class="my-4">
-    <header-vue></header-vue>
-  </div>
+  <header-vue></header-vue>
   <router-view></router-view>
 </template>
 
