@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-[#0E0E0E] text-white">
+  <header class="w-full bg-[#0E0E0E] text-white">
     <div 
       class="sticky top-0 lg:w-[85%] w-[90%] mx-auto lg:max-w-[1110px] backdrop-blur-[16px] py-8 flex items-center justify-between border-b lg:border-[#979797] border-[#9797971A]"
     >
@@ -42,7 +42,7 @@
         <categories-menu/>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 
