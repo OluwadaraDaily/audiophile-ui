@@ -7,7 +7,9 @@
         <hamburger-icon/>
       </div>
       <div class="lg:basis-auto basis-[80%] flex justify-center md:justify-start">
-        <logo/>
+        <router-link to="/">
+          <logo/>
+        </router-link>
       </div>
       <div class="hidden lg:block">
         <ul class="flex items-center gap-4">
