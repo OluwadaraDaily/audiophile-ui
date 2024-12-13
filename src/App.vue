@@ -5,7 +5,7 @@
 
 <script setup>
 // Imports
-import HeaderVue from "./components/Header/Header.vue";
+import HeaderVue from "@/components/organisms/Header/Header.vue";
 
 
 </script>

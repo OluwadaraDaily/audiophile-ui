@@ -23,6 +23,7 @@
       </div>
     </div>
   </section>
+  <!-- Other section (white background color) -->
   <section class="bg-white">
     <div class="lg:w-[75%] w-[90%] mx-auto">
       <div class="lg:my-16">
