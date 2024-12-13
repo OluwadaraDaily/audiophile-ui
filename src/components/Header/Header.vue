@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full">
+  <div class="w-full bg-[#0E0E0E] text-white">
     <div 
-      class="sticky top-0 lg:w-[85%] w-[90%] mx-auto lg:max-w-[1110px] backdrop-blur-[16px] py-8 flex items-center justify-between border-b border-[#979797]"
+      class="sticky top-0 lg:w-[85%] w-[90%] mx-auto lg:max-w-[1110px] backdrop-blur-[16px] py-8 flex items-center justify-between border-b lg:border-[#979797] border-[#9797971A]"
     >
       <div class="lg:hidden inline" @click="toggleMenu">
         <hamburger-icon/>
@@ -12,16 +12,16 @@
       <div class="hidden lg:block">
         <ul class="flex items-center gap-4">
           <li>
-            <router-link class="sub-title" to="/">HOME</router-link>
+            <router-link class="sub-title hover:text-primary" to="/">HOME</router-link>
           </li>
           <li>
-            <router-link class="sub-title" to="/headphones">HEADPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/headphones">HEADPHONES</router-link>
           </li>
           <li>
-            <router-link class="sub-title" to="/speakers">SPEAKERS</router-link>
+            <router-link class="sub-title hover:text-primary" to="/speakers">SPEAKERS</router-link>
           </li>
           <li>
-            <router-link class="sub-title" to="/earphones">EARPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/earphones">EARPHONES</router-link>
           </li>
         </ul>
       </div>
@@ -30,52 +30,14 @@
       </div>
     </div>
     <!-- Menu for small and medium sized screens -->
-    <div class="relative block">
+    <div 
+      class="relative block"
+    >
       <div 
-        class="lg:hidden absolute w-full bg-white rounded-bl-xl rounded-br-xl roll-down z-10 top-0"
-        :class="{ 'block': showMenu }" 
+        class="lg:hidden absolute w-full bg-white rounded-bl-xl rounded-br-xl roll-down z-10 top-0 shadow-2xl"
+        :class="{ 'block': showMenu }"
       >
-        <div class="flex md:flex-row flex-col items-center justify-center md:gap-2 gap-10 px-6 py-12 md:mt-12">
-          <div 
-            class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col items-center justify-end py-4"
-          >
-            <div class="absolute top-[-30px]">
-              <img src="../../assets/img/headphones.png" class="w-[80px] h-[104px]" alt="Headphones">
-            </div>
-            <div class="flex flex-col items-center">
-              <p class="mb-2 font-bold text-black">HEADPHONES</p>
-              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/headphones">
-                SHOP <right-arrow-icon/>
-              </router-link>
-            </div>
-          </div>
-          <div 
-            class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col items-center justify-end py-4"
-          >
-            <div class="absolute top-[-30px]">
-              <img src="../../assets/img/speakers.png" class="w-[80px] h-[104px]" alt="Speakers">
-            </div>
-            <div class="flex flex-col items-center">
-              <p class="mb-2 font-bold text-black">SPEAKERS</p>
-              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/speakers">
-                SHOP <right-arrow-icon/>
-              </router-link>
-            </div>
-          </div>
-          <div 
-            class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col items-center justify-end py-4"
-          >
-            <div class="absolute top-[-30px]">
-              <img src="../../assets/img/earphones.png" class="w-[104px] h-[104px]" alt="Earphones">
-            </div>
-            <div class="flex flex-col items-center">
-              <p class="mb-2 font-bold text-black">EARPHONES</p>
-              <router-link class="tertiary-btn sub-title text-black opacity-50" to="/earphones">
-                SHOP <right-arrow-icon/>
-              </router-link>
-            </div>
-          </div>
-        </div>
+        <categories-menu/>
       </div>
     </div>
   </div>
@@ -85,11 +47,11 @@
 <script setup>
 // Imports
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import Logo from "../icons/Logo.vue";
 import CartIcon from "../icons/Cart.vue";
 import HamburgerIcon from "../icons/Hamburger.vue";
-import RightArrowIcon from "../icons/RightArrow.vue";
-import { useRouter } from "vue-router";
+import CategoriesMenu from "../molecules/CategoriesMenu/CategoriesMenu.vue"
 
 // Router instance
 const router = useRouter();
