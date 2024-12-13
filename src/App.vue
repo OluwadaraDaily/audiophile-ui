@@ -1,14 +1,13 @@
 <template>
-  <div class="my-4">
-    <header-vue></header-vue>
-  </div>
+  <header-vue/>
   <router-view></router-view>
+  <footer-vue/>
 </template>
 
 <script setup>
 // Imports
-import HeaderVue from "./components/Header/Header.vue";
-
+import HeaderVue from "@/components/organisms/Header/Header.vue";
+import FooterVue from "./components/organisms/Footer/Footer.vue";
 
 </script>
 
