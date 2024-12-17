@@ -17,13 +17,13 @@
             <router-link class="sub-title hover:text-primary" to="/">HOME</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/headphones">HEADPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/headphones">HEADPHONES</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/speakers">SPEAKERS</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/speakers">SPEAKERS</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/earphones">EARPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/earphones">EARPHONES</router-link>
           </li>
         </ul>
       </div>
@@ -33,11 +33,12 @@
     </div>
     <!-- Menu for small and medium sized screens -->
     <div 
-      class="relative block"
+      class="relative"
+      v-show="showMenu"
     >
       <div 
-        class="lg:hidden absolute w-full bg-white rounded-bl-xl rounded-br-xl roll-down z-10 top-0 shadow-2xl"
-        :class="{ 'block': showMenu }"
+        class="absolute w-full bg-white rounded-bl-xl rounded-br-xl roll-down z-10 top-0 shadow-2xl"
+        :class="{ 'roll-down-active': showMenu }"
       >
         <categories-menu/>
       </div>
@@ -74,11 +75,12 @@ router.afterEach(() => {
 <style scoped>
 .roll-down {
   opacity: 0;
-  overflow: hidden;
-  transition: min-height 0.5s ease, opacity 0.5s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.roll-down.block {
+.roll-down-active {
   opacity: 1;
+  transform: translateY(0);
 }
 </style>

@@ -14,7 +14,7 @@
           Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
         </p>
         <router-link
-          to="/speakers"
+          to="/categories/speakers"
           class="primary-btn bg-black text-white hover:bg-active-grey block w-max"
         >see product</router-link>
       </div>
@@ -24,7 +24,7 @@
     <div class="w-[80%] mx-auto">
       <h4 class="h4 mb-8">ZX7 SPEAKER</h4>
       <router-link
-        to="/speakers"
+        to="/categories/speakers"
         class="block w-max primary-btn bg-transparent border border-black text-black hover:bg-black hover:text-white"
       >see product</router-link>
     </div>
@@ -38,7 +38,7 @@
       <div class="w-[80%] mx-auto">
         <h4 class="h4 mb-8">YX1 EARPHONES</h4>
         <router-link
-          to="/earphones"
+          to="/categories/earphones"
           class="block w-max primary-btn bg-transparent border border-black text-black hover:bg-black hover:text-white"
         >see product</router-link>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="flex md:flex-row flex-col items-center justify-center md:gap-2 lg:gap-5 gap-10 px-6 py-12 md:mt-12">
     <router-link 
-      to="/headphones"
+      to="/categories/headphones"
       class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col 
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
@@ -16,7 +16,7 @@
       </div>
     </router-link>
     <router-link 
-      to="/speakers"
+      to="/categories/speakers"
       class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col 
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
@@ -31,7 +31,7 @@
       </div>
     </router-link>
     <router-link 
-      to="/earphones"
+      to="/categories/earphones"
       class="h-[165px] w-[223px] rounded-lg bg-grey relative flex flex-col 
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
