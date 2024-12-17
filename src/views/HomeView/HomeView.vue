@@ -12,7 +12,7 @@
         <p class="lg:w-[350px] mb-6 opacity-75 md:mb-12">
           Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
         </p>
-        <router-link to="/headphones" class="primary-btn">see product</router-link>
+        <router-link to="/categories/headphones" class="primary-btn">see product</router-link>
       </div>
       <div class="lg:h-[586px] lg:w-[586px] lg:static absolute">
         <img 

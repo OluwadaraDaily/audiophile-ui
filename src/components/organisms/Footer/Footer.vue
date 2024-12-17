@@ -9,13 +9,13 @@
             <router-link class="sub-title hover:text-primary" to="/">HOME</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/headphones">HEADPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/headphones">HEADPHONES</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/speakers">SPEAKERS</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/speakers">SPEAKERS</router-link>
           </li>
           <li>
-            <router-link class="sub-title hover:text-primary" to="/earphones">EARPHONES</router-link>
+            <router-link class="sub-title hover:text-primary" to="/categories/earphones">EARPHONES</router-link>
           </li>
         </ul>
         <p class="p opacity-50 text-center md:text-left">
