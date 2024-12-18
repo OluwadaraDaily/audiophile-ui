@@ -1,11 +1,13 @@
 <template>
-  <div class="m-5">
-    <div class="w-full p-4 bg-gray-300 rounded-xl">
-      This is the Earphones View.  
-    </div>
+  <div v-for="earphone in earphonesData" class="mb-20" :key="earphone.tag">
+    <product-item
+      v-bind="earphone"
+    />
   </div>
 </template>
 
 
 <script setup>
+import ProductItem from '@/components/atoms/ProductItem/ProductItem.vue';
+import { earphonesData } from '@/data/products';
 </script>
