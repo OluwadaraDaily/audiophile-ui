@@ -5,4 +5,5 @@ export interface ProductProps {
   description: string;
   tag: string;
   isRowReverse?: boolean;
+  link: string;
 }

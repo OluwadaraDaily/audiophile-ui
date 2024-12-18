@@ -7,6 +7,7 @@ export const headphonesData: ProductProps[] = [
     isNewProduct: true,
     imgSrc: "headphones/xx99-mark-ii-headphones.png",
     tag: "xx99-mark-ii-headphones",
+    link: "headphones"
   },
   {
     name: "XX99 MARK I HEADPHONES",
@@ -15,6 +16,7 @@ export const headphonesData: ProductProps[] = [
     imgSrc: "headphones/xx99-mark-i-headphones.png",
     tag: "xx99-mark-i-headphones",
     isRowReverse: true,
+    link: "headphones"
   },
   {
     name: "XX59 HEADPHONES",
@@ -22,6 +24,7 @@ export const headphonesData: ProductProps[] = [
     isNewProduct: false,
     imgSrc: "headphones/xx59-headphones.png",
     tag: "xx59-headphones",
+    link: "headphones"
   },
 ]
 
@@ -32,6 +35,7 @@ export const speakersData: ProductProps[] = [
     isNewProduct: true,
     imgSrc: "speakers/zx9-speaker.png",
     tag: "zx9-speaker",
+    link: "speakers"
   },
   {
     name: "ZX7 SPEAKER",
@@ -39,6 +43,7 @@ export const speakersData: ProductProps[] = [
     isNewProduct: true,
     imgSrc: "speakers/zx7-speaker.png",
     tag: "zx7-speaker",
+    link: "speakers",
     isRowReverse: true,
   }
 ]
