@@ -26,7 +26,7 @@ module.exports = {
       }
     },
     backgroundImage: {
-      'zx7-speaker': "url('/src/assets/img/speakers/zx7-speaker.png')",
+      'zx7-speaker': "url('/src/assets/img/speakers/zx7-speaker-lg.png')",
       'zx7-speaker-sm': "url('/src/assets/img/speakers/zx7-speaker-sm.png')",
       'zx7-speaker-md': "url('/src/assets/img/speakers/zx7-speaker-md.png')",
       'yx1-earphone': "url('/src/assets/img/earphones/yx1-earphones.png')",

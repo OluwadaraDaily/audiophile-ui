@@ -24,3 +24,21 @@ export const headphonesData: ProductProps[] = [
     tag: "xx59-headphones",
   },
 ]
+
+export const speakersData: ProductProps[] = [
+  {
+    name: "ZX9 SPEAKER",
+    description: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+    isNewProduct: true,
+    imgSrc: "speakers/zx9-speaker.png",
+    tag: "zx9-speaker",
+  },
+  {
+    name: "ZX7 SPEAKER",
+    description: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+    isNewProduct: true,
+    imgSrc: "speakers/zx7-speaker.png",
+    tag: "zx7-speaker",
+    isRowReverse: true,
+  }
+]
