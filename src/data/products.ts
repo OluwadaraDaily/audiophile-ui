@@ -47,3 +47,14 @@ export const speakersData: ProductProps[] = [
     isRowReverse: true,
   }
 ]
+
+export const earphonesData: ProductProps[] = [
+  {
+    name: "YX1 WIRELESS EARPHONES",
+    description: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+    isNewProduct: true,
+    imgSrc: "earphones/yx1-earphones.png",
+    tag: "yx1-earphones",
+    link: "earphones",
+  }
+]
