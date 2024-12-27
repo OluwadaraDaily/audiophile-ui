@@ -10,27 +10,31 @@
       <p v-show="props.isNewProduct" class="overline-text text-primary mb-4">NEW PRODUCT</p>
       <h4 class="h4 uppercase mb-4">{{ props.name }}</h4>
       <p class="p opacity-50 mb-4">{{ props.description }}</p>
-      <router-link :to="`/categories/${props.link}`" class="primary-btn w-max">see product</router-link>
+      <slot name="after-description">
+        <router-link :to="`${props.link}`" class="primary-btn w-max">see product</router-link>
+      </slot>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, watchEffect } from 'vue';
+<script lang="ts" setup>
+import { ref, watchEffect, watch } from 'vue';
 import { ProductProps } from './types';
+import { useImageLoader } from '@/composables/useImageLoader';
 
 const props = defineProps<ProductProps>()
 
-const images = import.meta.glob('@/assets/img/**/*'); // Match all images
+const images = import.meta.glob('@/assets/img/**/*');
 const imageSrc = ref<string>('');
 
-watchEffect(async () => {
-  const fullPath = `/src/assets/img/${props.imgSrc}`;
-  if (images[fullPath]) {
-    const mod = await images[fullPath]();
-    imageSrc.value = mod.default;
-  } else {
-    console.error('Image not found:', fullPath);
-  }
-});
+watch(() => props.imgSrc, (newImgSrc) => {
+  const { imageSrc: loadedImageSrc } = useImageLoader(newImgSrc);
+  watch(
+      () => loadedImageSrc.value,
+      (loadedSrc) => {
+        imageSrc.value = loadedSrc;
+      }
+    );
+
+}, { immediate: true })
 </script>
