@@ -55,7 +55,7 @@
     @apply text-[13px] leading-[25px] font-bold tracking-[1px];
   }
   .primary-btn {
-    @apply px-5 py-3 bg-primary uppercase font-bold text-[13px] text-center tracking-[1px] text-white hover:bg-primary-light;
+    @apply px-5 py-3 bg-primary uppercase font-bold text-[13px] text-center tracking-[1px] text-white hover:bg-primary-light hover:cursor-pointer;
   }
   .secondary-btn {
     @apply px-3 py-4 bg-transparent border border-black text-black hover:bg-black hover:text-white;
