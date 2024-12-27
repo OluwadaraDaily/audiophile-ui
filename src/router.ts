@@ -5,6 +5,7 @@ import HeadphonesView from './views/HeadphonesView/HeadphonesView.vue'
 import SpeakersView from "./views/SpeakersView/SpeakersView.vue"
 import EarphonesView from "./views/EarphonesView/EarphonesView.vue"
 import CategoriesView from "./views/CategoriesView/CategoriesView.vue"
+import ProductDetailView from './views/ProductDetailView/ProductDetailView.vue'
 
 
 const routes: RouteRecordRaw[] = [
@@ -21,7 +22,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'headphones',
         name: "headphones",
-        component: HeadphonesView
+        component: HeadphonesView,
       },
       {
         path: 'speakers',
@@ -35,6 +36,11 @@ const routes: RouteRecordRaw[] = [
       },
     ]
   },
+  {
+    path: "/categories/:category/:id",
+    name: "product-detail",
+    component: ProductDetailView,
+  }
 ]
 
 export const router = createRouter({
@@ -45,3 +51,11 @@ export const router = createRouter({
     return { top: 0 };
   },
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name === 'product-detail' && !['headphones', 'speakers', 'earphones'].includes(to.params.category as string)) {
+    next({ name: 'home' }); // Redirect to home for invalid categories
+  } else {
+    next();
+  }
+});
