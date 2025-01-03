@@ -1,6 +1,6 @@
 <template>
   <header-vue/>
-  <router-view></router-view>
+  <router-view/>
   <footer-vue/>
 </template>
 

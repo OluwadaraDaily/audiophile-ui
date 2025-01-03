@@ -14,3 +14,13 @@ export const shuffleArray = <T>(array: T[]): T[] => {
   }
   return array;
 };
+
+export const debounce = <T extends (...args: any[]) => void>(func: T, timeout = 500) => {
+  let timer: number | NodeJS.Timeout;
+  
+  return (...args: Parameters<T>) => {
+    console.log('ARGS =>', args);
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), timeout);
+  };
+};

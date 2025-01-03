@@ -27,9 +27,9 @@
           </li>
         </ul>
       </div>
-      <div>
+      <button @click="toggleCart">
         <cart-icon/>
-      </div>
+      </button>
     </div>
     <!-- Menu for small and medium sized screens -->
     <div 
@@ -43,27 +43,47 @@
         <categories-menu/>
       </div>
     </div>
+
+    <div
+      v-show="showCart"
+      class="w-full h-[100vh] fixed z-50"
+    >
+      <cart/>
+    </div>
   </header>
 </template>
 
 
 <script setup>
 // Imports
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 import Logo from "@/components/icons/Logo.vue";
 import CartIcon from "@/components/icons/Cart.vue";
 import HamburgerIcon from "@/components/icons/Hamburger.vue";
 import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
+import Cart from "@/components/molecules/Cart/Cart.vue";
 
 // Router instance
 const router = useRouter();
 
 const showMenu = ref(false);
-
 const toggleMenu = () => {
   showMenu.value = !showMenu.value;
 };
+
+const showCart = ref(false);
+const toggleCart = () => {
+  showCart.value = !showCart.value;
+}
+
+watch(showCart, () => {
+  if (showCart) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+})
 
 // Watch route changes to close the menu
 router.afterEach(() => {
