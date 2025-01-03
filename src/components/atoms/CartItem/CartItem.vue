@@ -7,7 +7,7 @@
       <p class="uppercase font-bold">{{ props.product.altName }}</p>
       <p class="text-sm opacity-50 font-bold">{{ formatCurrency(props.product.price) }}</p>
     </div>
-    <div class="bg-grey flex-grow flex items-center">
+    <div class="bg-grey flex-grow flex items-center py-2">
       <div class="w-[70%] mx-auto flex justify-between">
         <button 
           class="hover:text-primary text-black opacity-25 font-bold hover:opacity-100 hover:cursor-pointer"
