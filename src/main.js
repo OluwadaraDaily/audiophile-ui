@@ -4,6 +4,9 @@ import { router } from './router.ts'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
+import { initializeCart } from './common/cartUtil'
+
+initializeCart();
 
 const pinia = createPinia()
 const app = createApp(App)
