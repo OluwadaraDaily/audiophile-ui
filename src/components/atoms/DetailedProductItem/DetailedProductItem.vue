@@ -75,7 +75,6 @@ const decreaseCount = () => {
 }
 
 const addToCart = () => {
-  console.log('COUNT =>', count.value);
   cartStore.addToCart(props.product, count.value);
 }
 </script>

@@ -50,11 +50,5 @@ import { useCartStore } from "@/store/store";
 // Cart [store]
 const cartStore = useCartStore();
 
-let cart = cartStore.cart;
-
-watch(cartStore.cart, () => {
-  console.log('CART UPDATED =>', cartStore.cart)
-  cart = cartStore.getCart;
-  console.log('THIS CART =>', cart)
-})
+let cart = computed(() => cartStore.cart)
 </script>

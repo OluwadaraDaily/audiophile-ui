@@ -5,7 +5,6 @@ import { ProductProps } from '@/components/atoms/ProductItem/types'
 export const useCartStore = defineStore('cart', {
   state: () => {
     const storedCart = localStorage.getItem('cart')
-    console.log('Stored Cart:', storedCart);
     return {
       cart: storedCart ? JSON.parse(storedCart) : [] as CartItem[],
     }
@@ -13,7 +12,6 @@ export const useCartStore = defineStore('cart', {
   getters: {
     getCartTotalAmount: (state) => {
       const total = state.cart.reduce((acc: number, item: CartItem) => (acc + (item.quantity * item.product.price)), 0)
-      console.log('TOTAL =>', total)
       return total;
     },
     getCartCount: (state) => {
@@ -30,7 +28,6 @@ export const useCartStore = defineStore('cart', {
     addToCart(product: ProductProps, quantity: number) {
       const existingProduct = this.cart.find((item: CartItem) => product.tag === item.product.tag)
       if (existingProduct) {
-        console.log('UPDATE CART!')
         existingProduct.quantity = quantity;
       } else {
         this.cart.push({ product, quantity })
