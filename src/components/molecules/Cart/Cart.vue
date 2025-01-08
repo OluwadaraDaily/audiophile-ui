@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-black bg-opacity-40 relative h-full flex justify-center">
-    <div class="w-[90%] mx-auto bg-white rounded-md absolute top-12 py-8 text-black">
+  <div class="bg-black bg-opacity-40 relative h-full flex justify-center md:justify-end">
+    <div class="w-[90%] md:w-[50%] lg:w-[400px] mx-auto bg-white rounded-md absolute top-12 md:right-10 lg:right-[10%] py-8 text-black">
       <div class="w-[90%] mx-auto">
         <div class="flex items-center justify-between">
           <h6 class="h6 uppercase">cart ({{ cartStore.getCartCount }})</h6>
@@ -12,11 +12,12 @@
             Remove all
           </button>
         </div>
-        <div class="my-12">
+        <div class="my-12 max-h-[150px] md:max-h-[200px] overflow-y-auto">
           <cart-item
             v-for="cartItem in cart"
             :key="cartItem.product.name"
             v-bind="cartItem"
+            class="mb-6"
           />
         </div>
         <div 
@@ -39,15 +40,21 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from "vue"
+import { watch } from "vue"
 import CartItem from "@/components/atoms/CartItem/CartItem.vue"
 import { Cart } from "@/types/cart.ts"
 import { headphonesData } from "@/data/products.ts"
 import { formatCurrency } from "@/common/utils.ts";
-import { useCartStore } from "@/store/store.ts";
+import { useCartStore } from "@/store/store";
 
 // Cart [store]
 const cartStore = useCartStore();
-const cart = [];
-console.log('CART STORE =>', cartStore.cart)
+
+let cart = cartStore.cart;
+
+watch(cartStore.cart, () => {
+  console.log('CART UPDATED =>', cartStore.cart)
+  cart = cartStore.getCart;
+  console.log('THIS CART =>', cart)
+})
 </script>
