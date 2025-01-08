@@ -30,6 +30,7 @@ export const useCartStore = defineStore('cart', {
     addToCart(product: ProductProps, quantity: number) {
       const existingProduct = this.cart.find((item: CartItem) => product.tag === item.product.tag)
       if (existingProduct) {
+        console.log('UPDATE CART!')
         existingProduct.quantity = quantity;
       } else {
         this.cart.push({ product, quantity })

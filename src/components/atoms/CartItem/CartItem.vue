@@ -75,7 +75,7 @@ watch(quantity, () => {
 
 // Update cart TODO: move to a separate file (all cart funtions)
 const debouncedUpdateCart = debounce(() => {
-  cartStore.updateCart(props.product, quantity.value);
+  cartStore.addToCart(props.product, quantity.value);
 })
 
 </script>
