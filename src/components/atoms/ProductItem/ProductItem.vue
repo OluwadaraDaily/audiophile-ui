@@ -24,7 +24,6 @@ import { useImageLoader } from '@/composables/useImageLoader';
 
 const props = defineProps<ProductProps>()
 
-const images = import.meta.glob('@/assets/img/**/*');
 const imageSrc = ref<string>('');
 
 watch(() => props.imgSrc, (newImgSrc) => {

@@ -25,8 +25,9 @@
         </div>
         <button 
           class="primaty-btn bg-primary text-white font-semibold py-4 uppercase w-[160px]"
+          @click="addToCart"
         >
-          add to cart
+          {{ isProductInCart ? 'update cart' : 'add to cart' }}
         </button>
       </div>
     </template>
@@ -35,18 +36,36 @@
 
 <script setup lang="ts">
 // Imports
+import { ref, onMounted, watch } from 'vue';
 import ProductItem from '@/components/atoms/ProductItem/ProductItem.vue';
 import { ProductProps } from '../ProductItem/types';
 import { formatCurrency } from '@/common/utils';
-import { ref } from 'vue';
+import { useCartStore } from "@/store/store";
+import { CartItem } from "@/types/cart.ts"
 
 // Props
 const props = defineProps<{
   product: ProductProps
 }>()
 
-// Count for cart
-const count = ref<number>(1);
+// Cart logic
+let isProductInCart = ref(false)
+const cartStore = useCartStore()
+
+let count = ref<number>(1);
+
+watch(cartStore.cart, () => {
+  // Check if product is in cart
+  // If yes, update count and button text
+  const findProductInCart = cartStore.cart.find((item: CartItem) => item.product.tag === props.product.tag)
+  if (findProductInCart) {
+    isProductInCart.value = true;
+    count.value = findProductInCart.quantity;
+  } else {
+    isProductInCart.value = false;
+    count.value = 1;
+  }
+}, { immediate: true })
 
 const increaseCount = () => {
   count.value++;
@@ -56,5 +75,9 @@ const decreaseCount = () => {
   if (count.value > 1) {
     count.value--;
   }
+}
+
+const addToCart = () => {
+  cartStore.addToCart(props.product, count.value);
 }
 </script>
