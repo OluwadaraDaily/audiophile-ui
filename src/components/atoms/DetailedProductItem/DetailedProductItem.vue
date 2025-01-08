@@ -59,8 +59,11 @@ watch(cartStore.cart, () => {
   // If yes, update count and button text
   const findProductInCart = cartStore.cart.find((item: CartItem) => item.product.tag === props.product.tag)
   if (findProductInCart) {
-    isProductInCart.value = true
-    count.value = findProductInCart.quantity
+    isProductInCart.value = true;
+    count.value = findProductInCart.quantity;
+  } else {
+    isProductInCart.value = false;
+    count.value = 1;
   }
 }, { immediate: true })
 

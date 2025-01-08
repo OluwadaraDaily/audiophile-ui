@@ -25,6 +25,9 @@
         </button>
       </div>
     </div>
+    <button type="button" class="rounded-[50%] border border-danger p-1 hover:bg-danger hover:text-white group" @click="removeItemFromCart">
+      <close-icon/>
+    </button>
   </div>
 </template>
 
@@ -34,6 +37,7 @@ import { CartItem } from "@/types/cart.ts";
 import { useImageLoader } from "@/composables/useImageLoader.ts"
 import { formatCurrency, debounce } from "@/common/utils.ts"
 import { useCartStore } from "@/store/store.ts"
+import CloseIcon from "@/components/icons/Close.vue"
 
 const props = defineProps<CartItem>();
 const cartStore = useCartStore();
@@ -73,9 +77,15 @@ watch(quantity, () => {
   debouncedUpdateCart()
 })
 
-// Update cart TODO: move to a separate file (all cart funtions)
 const debouncedUpdateCart = debounce(() => {
   cartStore.addToCart(props.product, quantity.value);
 })
+
+const removeItemFromCart = () => {
+  const shouldRemoveItem = confirm(`Are you sure you want to remove ${props.product.altName} from cart`)
+  if (shouldRemoveItem) {
+    cartStore.removeFromCart(props.product)
+  }
+}
 
 </script>

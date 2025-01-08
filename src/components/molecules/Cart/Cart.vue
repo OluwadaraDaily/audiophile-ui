@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from "vue"
+import { computed } from "vue"
 import CartItem from "@/components/atoms/CartItem/CartItem.vue"
 import { Cart } from "@/types/cart.ts"
 import { headphonesData } from "@/data/products.ts"
