@@ -36,7 +36,7 @@ import { ref, watch, watchEffect } from 'vue';
 import { CartItem } from "@/types/cart.ts";
 import { useImageLoader } from "@/composables/useImageLoader.ts"
 import { formatCurrency, debounce } from "@/common/utils.ts"
-import { useCartStore } from "@/store/store.ts"
+import { useCartStore } from "@/store/cart"
 import CloseIcon from "@/components/icons/Close.vue"
 
 const props = defineProps<CartItem>();

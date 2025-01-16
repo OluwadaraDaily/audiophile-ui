@@ -28,7 +28,7 @@
           <h6 class="font-bold">{{ formatCurrency(cartStore.getCartTotalAmount) }}</h6>
         </div>
         <router-link 
-          to="#"
+          to="/checkout"
           class="primary-btn w-full block"
           v-if="cartStore.getCartCount"
         >
@@ -45,7 +45,7 @@ import CartItem from "@/components/atoms/CartItem/CartItem.vue"
 import { Cart } from "@/types/cart.ts"
 import { headphonesData } from "@/data/products.ts"
 import { formatCurrency } from "@/common/utils.ts";
-import { useCartStore } from "@/store/store";
+import { useCartStore } from "@/store/cart";
 
 // Cart [store]
 const cartStore = useCartStore();

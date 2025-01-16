@@ -23,3 +23,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Global styling for Intl Tel Input */
+.iti {
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.input-error {
+  border: 1px solid #CD2C2C;
+  outline: #CD2C2C solid 1px;
+}
+#intl-tel-input {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+#intl-tel-input::placeholder {
+  font-weight: 700;
+}

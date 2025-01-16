@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import HomeView from './views/HomeView/HomeView.vue'
-import HeadphonesView from './views/HeadphonesView/HeadphonesView.vue'
-import SpeakersView from "./views/SpeakersView/SpeakersView.vue"
-import EarphonesView from "./views/EarphonesView/EarphonesView.vue"
-import CategoriesView from "./views/CategoriesView/CategoriesView.vue"
-import ProductDetailView from './views/ProductDetailView/ProductDetailView.vue'
+import HomeView from '@/views/HomeView/HomeView.vue'
+import HeadphonesView from '@/views/HeadphonesView/HeadphonesView.vue'
+import SpeakersView from "@/views/SpeakersView/SpeakersView.vue"
+import EarphonesView from "@/views/EarphonesView/EarphonesView.vue"
+import CategoriesView from "@/views/CategoriesView/CategoriesView.vue"
+import ProductDetailView from '@/views/ProductDetailView/ProductDetailView.vue'
+import CheckoutView from '@/views/CheckoutView/CheckoutView.vue'
 
 
 const routes: RouteRecordRaw[] = [
@@ -40,6 +41,11 @@ const routes: RouteRecordRaw[] = [
     path: "/categories/:category/:id",
     name: "product-detail",
     component: ProductDetailView,
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: CheckoutView
   }
 ]
 

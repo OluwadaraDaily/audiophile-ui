@@ -40,7 +40,7 @@ import { ref, onMounted, watch } from 'vue';
 import ProductItem from '@/components/atoms/ProductItem/ProductItem.vue';
 import { ProductProps } from '../ProductItem/types';
 import { formatCurrency } from '@/common/utils';
-import { useCartStore } from "@/store/store";
+import { useCartStore } from "@/store/cart";
 import { CartItem } from "@/types/cart.ts"
 
 // Props

@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia'
 import { CartItem } from '@/types/cart'
 import { ProductProps } from '@/components/atoms/ProductItem/types'
+import { LOCAL_STORAGE_KEYS } from '@/common/constants'
+
 
 export const useCartStore = defineStore('cart', {
   state: () => {
-    const storedCart = localStorage.getItem('cart')
+    const storedCart = localStorage.getItem(LOCAL_STORAGE_KEYS.CART)
     return {
       cart: storedCart ? JSON.parse(storedCart) : [] as CartItem[],
     }
@@ -23,7 +25,7 @@ export const useCartStore = defineStore('cart', {
   },
   actions: {
     saveCart() {
-      localStorage.setItem('cart', JSON.stringify(this.cart))
+      localStorage.setItem(LOCAL_STORAGE_KEYS.CART, JSON.stringify(this.cart))
     },
     addToCart(product: ProductProps, quantity: number) {
       const existingProduct = this.cart.find((item: CartItem) => product.tag === item.product.tag)
