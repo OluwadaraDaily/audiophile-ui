@@ -7,27 +7,29 @@
       <p class="uppercase font-bold">{{ props.product.altName }}</p>
       <p class="text-sm opacity-50 font-bold">{{ formatCurrency(props.product.price) }}</p>
     </div>
-    <div class="bg-grey max-w-[100px] md:mr-0 flex-grow flex items-center py-2">
-      <div class="w-[70%] mx-auto flex justify-between">
-        <button 
-          class="hover:text-primary text-black opacity-25 font-bold hover:opacity-100 hover:cursor-pointer"
-          :class="{ 'hover:cursor-not-allowed hover:text-black hover:opacity-25' : quantity === 1 }"
-          @click="decreaseQuantity"
-        >
-          -
-        </button>
-        <p class="p text-black font-bold">{{ quantity }}</p>
-        <button 
-          class="hover:text-primary text-black opacity-25 font-bold hover:opacity-100 hover:cursor-pointer"
-          @click="increaseQuantity"
-        >
-          +
-        </button>
+    <slot name="cart-item-right-section">
+      <div class="bg-grey max-w-[100px] md:mr-0 flex-grow flex items-center py-2">
+        <div class="w-[70%] mx-auto flex justify-between">
+          <button 
+            class="hover:text-primary text-black opacity-25 font-bold hover:opacity-100 hover:cursor-pointer"
+            :class="{ 'hover:cursor-not-allowed hover:text-black hover:opacity-25' : quantity === 1 }"
+            @click="decreaseQuantity"
+          >
+            -
+          </button>
+          <p class="p text-black font-bold">{{ quantity }}</p>
+          <button 
+            class="hover:text-primary text-black opacity-25 font-bold hover:opacity-100 hover:cursor-pointer"
+            @click="increaseQuantity"
+          >
+            +
+          </button>
+        </div>
       </div>
-    </div>
-    <button type="button" class="rounded-[50%] border border-danger p-1 hover:bg-danger hover:text-white group" @click="removeItemFromCart">
-      <close-icon/>
-    </button>
+      <button type="button" class="rounded-[50%] border border-danger p-1 hover:bg-danger hover:text-white group" @click="removeItemFromCart">
+        <close-icon/>
+      </button>
+    </slot>
   </div>
 </template>
 

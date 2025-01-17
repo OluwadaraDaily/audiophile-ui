@@ -68,12 +68,11 @@ import { ref } from "vue";
 const paymentMethod = ref<string>("")
 
 const handlePaymentMethodChange = (event) => {
-  console.log('EVENT =>', event);
+  return;
 }
 
 const selectPaymentMethod = (event) => {
-  const radioInput = event.target.childNodes[0]
-  console.log('RADIO INPUT =>', radioInput)
+  const radioInput = event.target.childNodes[0];
   radioInput.click();
   radioInput.checked = true;
 }
