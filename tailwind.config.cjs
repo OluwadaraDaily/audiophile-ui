@@ -23,6 +23,7 @@ module.exports = {
         'grey-light': '#FAFAFA',
         'active-grey': '#979797',
         'danger': '#CD2C2C',
+        'input-grey': '#cfcfcf',
       }
     },
     backgroundImage: {

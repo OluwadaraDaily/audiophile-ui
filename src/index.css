@@ -54,13 +54,16 @@
   .sub-title {
     @apply text-[13px] leading-[25px] font-bold tracking-[1px];
   }
+  .btn {
+    @apply disabled:opacity-50 disabled:cursor-not-allowed
+  }
   .primary-btn {
-    @apply px-5 py-3 bg-primary uppercase font-bold text-[13px] text-center tracking-[1px] text-white hover:bg-primary-light hover:cursor-pointer;
+    @apply btn px-5 py-3 bg-primary uppercase font-bold text-[13px] text-center tracking-[1px] text-white hover:bg-primary-light hover:cursor-pointer;
   }
   .secondary-btn {
-    @apply px-3 py-4 bg-transparent border border-black text-black hover:bg-black hover:text-white;
+    @apply btn px-3 py-4 bg-transparent border border-black text-black hover:bg-black hover:text-white;
   }
   .tertiary-btn {
-    @apply border-0 bg-transparent text-grey hover:text-primary flex items-center gap-2;
+    @apply btn border-0 bg-transparent text-grey hover:text-primary flex items-center gap-2;
   }
 }
