@@ -27,7 +27,7 @@
           </li>
         </ul>
       </div>
-      <button type="button" class="flex items-center gap-1" @click="toggleCart">
+      <button type="button" class="flex items-center gap-1" @click="toggleCart($event)">
         <cart-icon/>
         <span class="h-[20px] w-[20px] rounded-[50%] bg-primary-light text-black font-bold flex items-center justify-center">
           {{ cartStore.cart.length }}
@@ -48,10 +48,10 @@
     </div>
 
     <div
-      v-show="showCart"
+      v-if="showCart"
       class="w-full h-[100vh] fixed z-50"
     >
-      <cart/>
+      <cart @close-cart="showCart = false"/>
     </div>
   </header>
 </template>
@@ -77,7 +77,8 @@ const toggleMenu = () => {
 };
 
 const showCart = ref(false);
-const toggleCart = () => {
+const toggleCart = (event) => {
+  event.stopPropagation();
   showCart.value = !showCart.value;
 }
 
