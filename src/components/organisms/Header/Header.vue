@@ -27,8 +27,11 @@
           </li>
         </ul>
       </div>
-      <button @click="toggleCart">
+      <button type="button" class="flex items-center gap-1" @click="toggleCart($event)">
         <cart-icon/>
+        <span class="h-[20px] w-[20px] rounded-[50%] bg-primary-light text-black font-bold flex items-center justify-center">
+          {{ cartStore.cart.length }}
+        </span>
       </button>
     </div>
     <!-- Menu for small and medium sized screens -->
@@ -45,10 +48,10 @@
     </div>
 
     <div
-      v-show="showCart"
+      v-if="showCart"
       class="w-full h-[100vh] fixed z-50"
     >
-      <cart/>
+      <cart @close-cart="showCart = false"/>
     </div>
   </header>
 </template>
@@ -63,6 +66,7 @@ import CartIcon from "@/components/icons/Cart.vue";
 import HamburgerIcon from "@/components/icons/Hamburger.vue";
 import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
 import Cart from "@/components/molecules/Cart/Cart.vue";
+import { useCartStore } from "@/store/cart.ts";
 
 // Router instance
 const router = useRouter();
@@ -73,7 +77,8 @@ const toggleMenu = () => {
 };
 
 const showCart = ref(false);
-const toggleCart = () => {
+const toggleCart = (event) => {
+  event.stopPropagation();
   showCart.value = !showCart.value;
 }
 
@@ -89,6 +94,9 @@ watch(showCart, () => {
 router.afterEach(() => {
   showMenu.value = false;
 });
+
+// Init cart store
+const cartStore = useCartStore();
 </script>
 
 

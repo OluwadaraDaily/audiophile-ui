@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black bg-opacity-40 relative h-full flex justify-center md:justify-end">
-    <div class="w-[90%] md:w-[50%] lg:w-[400px] mx-auto bg-white rounded-md absolute top-12 md:right-10 lg:right-[10%] py-8 text-black">
+    <div class="w-[90%] md:w-[50%] lg:w-[400px] mx-auto bg-white rounded-md absolute top-12 md:right-10 lg:right-[10%] py-8 text-black" ref="cartVisualRef">
       <div class="w-[90%] mx-auto">
         <div class="flex items-center justify-between">
           <h6 class="h6 uppercase">cart ({{ cartStore.getCartCount }})</h6>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue"
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import CartItem from "@/components/atoms/CartItem/CartItem.vue"
 import { Cart } from "@/types/cart.ts"
 import { headphonesData } from "@/data/products.ts"
@@ -51,4 +51,22 @@ import { useCartStore } from "@/store/cart";
 const cartStore = useCartStore();
 
 let cart = computed(() => cartStore.cart)
+
+// Handle clicking outside cart visual
+const cartVisualRef = ref(null)
+const emit = defineEmits<{
+  (e: 'close-cart')
+}>()
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+})
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+})
+
+const handleClickOutside = (event) => {
+  if (cartVisualRef.value && !cartVisualRef.value.contains(event.target)) { 
+    emit('close-cart')
+  }
+}
 </script>
