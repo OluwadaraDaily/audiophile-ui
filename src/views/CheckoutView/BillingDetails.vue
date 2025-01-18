@@ -1,51 +1,55 @@
 <template>
     <p class="sub-title uppercase text-primary mb-2">billing details</p>
     <form @submit.prevent="saveBillingDetails">
-      <div class="mb-6">
-        <label for="billingName" class="p">Name</label> <br/>
-        <input 
-          type="text" 
-          name="name" 
-          class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
-            placeholder-black placeholder-opacity-40 
-            placeholder:font-bold font-bold
-          " 
-          id="billingName"
-          v-model="billingDetails.name"
-          placeholder="Alexei Ward"
-          required
-        />
+      <div class="md:flex md:gap-3">
+        <div class="mb-6 md:basis-[50%] md:w-full">
+          <label for="billingName" class="p">Name</label> <br/>
+          <input 
+            type="text" 
+            name="name" 
+            class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
+              placeholder-black placeholder-opacity-40 
+              placeholder:font-bold font-bold
+            " 
+            id="billingName"
+            v-model="billingDetails.name"
+            placeholder="Alexei Ward"
+            required
+          />
+        </div>
+        <div class="mb-6 md:basis-[50%] md:w-full">
+          <label for="billingEmail" class="p">Email Address</label> <br/>
+          <input 
+            type="email" 
+            name="name" 
+            class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
+              placeholder-black placeholder-opacity-40 
+              placeholder:font-bold font-bold
+            " 
+            id="billingEmail"
+            v-model="billingDetails.emailAddress"
+            placeholder="alexei@mail.com"
+            required
+          />
+        </div>
       </div>
-      <div class="mb-6">
-        <label for="billingEmail" class="p">Email Address</label> <br/>
-        <input 
-          type="email" 
-          name="name" 
-          class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
-            placeholder-black placeholder-opacity-40 
-            placeholder:font-bold font-bold
-          " 
-          id="billingEmail"
-          v-model="billingDetails.emailAddress"
-          placeholder="alexei@mail.com"
-          required
-        />
-      </div>
-      <div class="mb-6">
-        <label for="billingEmail" class="p">Phone Number</label> <br/>
-        <IntlTelInput
-          ref="intlInputRef"
-          :class="{ 'input-error': !isPhoneNumberValidPrecise && touched.phoneNumber }"
-          id="intl-tel-input"
-          :value="billingDetails.phoneNumber"
-          :options='telInputOptions'
-          @change="handleTelInputChange"
-          @input="handleTelInputChange"
-          @changeErrorCode="phoneNumberErrorCode = $event"
-        />
-        <small v-if="!isPhoneNumberValidPrecise && !isNaN(phoneNumberErrorCode) && touched.phoneNumber" class="text-danger text-xs">
-          {{ intlTelErrorMap[phoneNumberErrorCode || 0] }}
-        </small>
+      <div class="md:flex">
+        <div class="mb-6 md:basis-[49%] md:w-full">
+          <label for="billingEmail" class="p">Phone Number</label> <br/>
+          <IntlTelInput
+            ref="intlInputRef"
+            :class="{ 'input-error': !isPhoneNumberValidPrecise && touched.phoneNumber }"
+            id="intl-tel-input"
+            :value="billingDetails.phoneNumber"
+            :options='telInputOptions'
+            @change="handleTelInputChange"
+            @input="handleTelInputChange"
+            @changeErrorCode="phoneNumberErrorCode = $event"
+          />
+          <small v-if="!isPhoneNumberValidPrecise && !isNaN(phoneNumberErrorCode) && touched.phoneNumber" class="text-danger text-xs">
+            {{ intlTelErrorMap[phoneNumberErrorCode || 0] }}
+          </small>
+        </div>
       </div>
       <div class="flex justify-end">
         <button 

@@ -16,50 +16,54 @@
         required
       />
     </div>
-    <div class="mb-6">
-      <label for="zipCode" class="p">ZIP Code</label> <br/>
-      <input 
-        type="text" 
-        name="zipCode" 
-        class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
-          placeholder-black placeholder-opacity-40 
-          placeholder:font-bold font-bold
-        " 
-        id="zipCode"
-        v-model="shippingInfo.zipCode"
-        placeholder="10010"
-        required
-      />
+    <div class="md:flex md:gap-3">
+      <div class="mb-6 md:basis-[50%] md:w-full">
+        <label for="zipCode" class="p">ZIP Code</label> <br/>
+        <input 
+          type="text" 
+          name="zipCode" 
+          class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
+            placeholder-black placeholder-opacity-40 
+            placeholder:font-bold font-bold
+          " 
+          id="zipCode"
+          v-model="shippingInfo.zipCode"
+          placeholder="10010"
+          required
+        />
+      </div>
+      <div class="mb-6 md:basis-[50%] md:w-full">
+        <label for="city" class="p">City</label> <br/>
+        <input 
+          type="text" 
+          name="city" 
+          class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
+            placeholder-black placeholder-opacity-40 
+            placeholder:font-bold font-bold
+          " 
+          id="city"
+          v-model="shippingInfo.city"
+          placeholder="Lagos"
+          required
+        />
+      </div>
     </div>
-    <div class="mb-6">
-      <label for="city" class="p">City</label> <br/>
-      <input 
-        type="text" 
-        name="city" 
-        class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
-          placeholder-black placeholder-opacity-40 
-          placeholder:font-bold font-bold
-        " 
-        id="city"
-        v-model="shippingInfo.city"
-        placeholder="Lagos"
-        required
-      />
-    </div>
-    <div class="mb-6">
-      <label for="country" class="p">Country</label> <br/>
-      <input 
-        type="text" 
-        name="country" 
-        class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
-          placeholder-black placeholder-opacity-40 
-          placeholder:font-bold font-bold
-        " 
-        id="country"
-        v-model="shippingInfo.country"
-        placeholder="Nigeria"
-        required
-      />
+    <div class="md:flex">
+      <div class="mb-6 md:basis-[49%] md:w-full">
+        <label for="country" class="p">Country</label> <br/>
+        <input 
+          type="text" 
+          name="country" 
+          class="mt-2 p-4 w-full border border-[#cfcfcf] rounded-lg p 
+            placeholder-black placeholder-opacity-40 
+            placeholder:font-bold font-bold
+          " 
+          id="country"
+          v-model="shippingInfo.country"
+          placeholder="Nigeria"
+          required
+        />
+      </div>
     </div>
     <div class="flex justify-end">
       <button 

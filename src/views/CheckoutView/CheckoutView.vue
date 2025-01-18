@@ -5,8 +5,8 @@
         <div class="mb-6 pt-10">
           <router-link to="/" class="border-none outline-none text-black opacity-50 hover:text-primary">Go Back</router-link>
         </div>
-        <div class="flex flex-col lg:flex-row gap-6">
-          <div class="lg:basis-[75%] lg:h-[100vh] py-6 w-[90%] mx-auto rounded-md">
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-12">
+          <div class="lg:basis-[65%] py-6 w-[90%] mx-auto rounded-md">
             <h2 class="h2 uppercase mb-4">checkout</h2>
             <div class="mb-8">
               <billing-details/>
@@ -18,7 +18,7 @@
               <payment-details/>
             </div>
           </div>
-          <div class="lg:basis-[25%] lg:h-[100vh] py-6 w-[90%] mx-auto rounded-md">
+          <div class="lg:basis-[35%] py-6 w-[90%] mx-auto rounded-md">
             <checkout-summary
               @show-modal="showModal"
             />
@@ -45,7 +45,6 @@ import CheckoutModal from "@/components/molecules/CheckoutModal/CheckoutModal.vu
 // Show modal
 let shouldShowModal = ref<boolean>(false);
 const showModal = () => {
-
   shouldShowModal.value = true;
 }
 </script>
