@@ -27,8 +27,11 @@
           </li>
         </ul>
       </div>
-      <button @click="toggleCart">
+      <button type="button" class="flex items-center gap-1" @click="toggleCart">
         <cart-icon/>
+        <span class="h-[20px] w-[20px] rounded-[50%] bg-primary-light text-black font-bold flex items-center justify-center">
+          {{ cartStore.cart.length }}
+        </span>
       </button>
     </div>
     <!-- Menu for small and medium sized screens -->
@@ -63,6 +66,7 @@ import CartIcon from "@/components/icons/Cart.vue";
 import HamburgerIcon from "@/components/icons/Hamburger.vue";
 import CategoriesMenu from "@/components/molecules/CategoriesMenu/CategoriesMenu.vue"
 import Cart from "@/components/molecules/Cart/Cart.vue";
+import { useCartStore } from "@/store/cart.ts";
 
 // Router instance
 const router = useRouter();
@@ -89,6 +93,9 @@ watch(showCart, () => {
 router.afterEach(() => {
   showMenu.value = false;
 });
+
+// Init cart store
+const cartStore = useCartStore();
 </script>
 
 
