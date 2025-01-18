@@ -79,5 +79,10 @@ const decreaseCount = () => {
 
 const addToCart = () => {
   cartStore.addToCart(props.product, count.value);
+  if (!isProductInCart) {
+    alert(`Added ${props.product.name} to cart`) 
+  } else {
+    alert(`Updated ${props.product.name} quantity in cart`)
+  }
 }
 </script>
