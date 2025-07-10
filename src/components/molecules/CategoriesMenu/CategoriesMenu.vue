@@ -6,7 +6,7 @@
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
       <div class="absolute top-[-30px]">
-        <img src="@/assets/img/headphones.png" class="w-[80px] h-[104px]" alt="Headphones">
+        <img src="@/assets/img/headphones.webp" class="w-[80px] h-[104px]" alt="Headphones">
       </div>
       <div class="flex flex-col items-center">
         <p class="mb-2 font-bold text-black">HEADPHONES</p>
@@ -21,7 +21,7 @@
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
       <div class="absolute top-[-30px]">
-        <img src="@/assets/img/speakers.png" class="w-[80px] h-[104px]" alt="Speakers">
+        <img src="@/assets/img/speakers.webp" class="w-[80px] h-[104px]" alt="Speakers">
       </div>
       <div class="flex flex-col items-center">
         <p class="mb-2 font-bold text-black">SPEAKERS</p>
@@ -36,7 +36,7 @@
       items-center justify-end py-4 hover:cursor-pointer group flex-grow"
     >
       <div class="absolute top-[-30px]">
-        <img src="@/assets/img/earphones.png" class="w-[104px] h-[104px]" alt="Earphones">
+        <img src="@/assets/img/earphones.webp" class="w-[104px] h-[104px]" alt="Earphones">
       </div>
       <div class="flex flex-col items-center">
         <p class="mb-2 font-bold text-black">EARPHONES</p>

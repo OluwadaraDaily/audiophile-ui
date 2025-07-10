@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col lg:flex-row-reverse gap-8 lg:items-center">
     <div class="rounded-md lg:basis-[50%]">
-      <img src="@/assets/img/highlight-banner.png" class="md:hidden inline rounded-md" alt="a man listening to music with one of our headphones"/>
-      <img src="@/assets/img/highlight-banner-lg.png" class="md:inline hidden rounded-md" alt="a man listening to music with one of our headphones"/>
+      <img src="@/assets/img/highlight-banner.webp" class="md:hidden inline rounded-md" alt="a man listening to music with one of our headphones"/>
+      <img src="@/assets/img/highlight-banner-lg.webp" class="md:inline hidden rounded-md" alt="a man listening to music with one of our headphones"/>
     </div>
     <div class="text-center lg:basis-[50%]">
       <h4 class="h4 md:h2 uppercase mb-8">

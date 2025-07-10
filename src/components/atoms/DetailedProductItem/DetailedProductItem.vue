@@ -54,9 +54,10 @@ const cartStore = useCartStore()
 
 let count = ref<number>(1);
 
-watch(cartStore.cart, () => {
+watch(() => cartStore.cart, () => {
   // Check if product is in cart
   // If yes, update count and button text
+  console.log('CURRENT CART =>',cartStore.cart)
   const findProductInCart = cartStore.cart.find((item: CartItem) => item.product.tag === props.product.tag)
   if (findProductInCart) {
     isProductInCart.value = true;
@@ -65,7 +66,7 @@ watch(cartStore.cart, () => {
     isProductInCart.value = false;
     count.value = 1;
   }
-}, { immediate: true })
+}, { immediate: true, deep: true })
 
 const increaseCount = () => {
   count.value++;
