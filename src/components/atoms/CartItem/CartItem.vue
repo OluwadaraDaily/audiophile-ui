@@ -68,6 +68,8 @@ watch(() => props.quantity, (newQuantity) => {
 const decreaseQuantity = (): void => {
   if (quantity.value > 1) {
     quantity.value--;
+  } else if (quantity.value === 1) {
+    removeItemFromCart()
   }
 }
 

@@ -113,6 +113,6 @@
       "@/*": ["src/*"]
     }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/common/performance.js"],
     "exclude": ["node_modules", "dist"],
 }

@@ -6,7 +6,7 @@
           <h6 class="h6 uppercase">cart ({{ cartStore.getCartCount }})</h6>
           <button 
             class="p underline decoration-[#00000080] text-black opacity-50"
-            @click="() => {}"
+            @click="() => cartStore.clearCart()"
             v-if="cartStore.getCartCount"
           >
             Remove all
