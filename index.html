@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/src/assets/base.css" as="style">
+    <link rel="preload" href="/src/assets/main.css" as="style">
+    <link rel="preload" href="/src/index.css" as="style">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload critical images -->
+    <link rel="preload" 
+          href="/src/assets/img/new-product.webp" 
+          as="image" 
+          type="image/webp">
+    <link rel="preload" 
+          href="/src/assets/img/highlight-banner.webp" 
+          as="image" 
+          type="image/webp">
+    <link rel="preload" 
+          href="/src/assets/img/highlight-banner-lg.webp" 
+          as="image" 
+          type="image/webp">
+    
+    <!-- Preload critical JavaScript -->
+    <link rel="modulepreload" href="/src/main.js">
+    <link rel="modulepreload" href="/src/App.vue">
+    <link rel="modulepreload" href="/src/router.ts">
+
     <title>Audiophile</title>
   </head>
   <body>
