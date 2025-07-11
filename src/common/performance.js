@@ -6,7 +6,7 @@ export function initializePerformanceMonitoring() {
   const ENV = process.env.NODE_ENV;
   console.log('Current environment:', ENV);
 
-  if (ENV === 'development') {
+  if (ENV === 'development' || ENV === 'production') {
     // Start tracking application initialization
     markApplicationStart();
     
