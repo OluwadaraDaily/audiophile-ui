@@ -19,6 +19,7 @@
           src="../../assets/img/new-product.webp" 
           class="lg:h-[586px] lg:w-[586px] md:w-[780px]" 
           alt="XX99 Mark II Headphones"
+          preload="auto"
         />
       </div>
     </div>
