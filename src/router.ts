@@ -1,51 +1,43 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import HomeView from '@/views/HomeView/HomeView.vue'
-import HeadphonesView from '@/views/HeadphonesView/HeadphonesView.vue'
-import SpeakersView from "@/views/SpeakersView/SpeakersView.vue"
-import EarphonesView from "@/views/EarphonesView/EarphonesView.vue"
-import CategoriesView from "@/views/CategoriesView/CategoriesView.vue"
-import ProductDetailView from '@/views/ProductDetailView/ProductDetailView.vue'
-import CheckoutView from '@/views/CheckoutView/CheckoutView.vue'
-
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: "home",
-    component: HomeView
+    component: () => import('@/views/HomeView/HomeView.vue')
   },
   {
     path: "/categories",
-    component: CategoriesView,
+    component: () => import('@/views/CategoriesView/CategoriesView.vue'),
     redirect: "/categories/headphones",
     children: [
       {
         path: 'headphones',
         name: "headphones",
-        component: HeadphonesView,
+        component: () => import('@/views/HeadphonesView/HeadphonesView.vue'),
       },
       {
         path: 'speakers',
         name: "speakers",
-        component: SpeakersView
+        component: () => import('@/views/SpeakersView/SpeakersView.vue')
       },
       {
         path: 'earphones',
         name: "earphones",
-        component: EarphonesView
+        component: () => import('@/views/EarphonesView/EarphonesView.vue')
       },
     ]
   },
   {
     path: "/categories/:category/:id",
     name: "product-detail",
-    component: ProductDetailView,
+    component: () => import('@/views/ProductDetailView/ProductDetailView.vue'),
   },
   {
     path: "/checkout",
     name: "checkout",
-    component: CheckoutView
+    component: () => import('@/views/CheckoutView/CheckoutView.vue')
   }
 ]
 
